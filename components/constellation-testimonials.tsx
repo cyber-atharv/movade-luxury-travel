@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Space_Mono } from "next/font/google";
 import clsx from "clsx";
+import { assetUrl } from "@/lib/asset";
 
 const mono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -206,7 +207,7 @@ export default function ConstellationTestimonials() {
               >
                 <span className="relative block h-full w-full overflow-hidden rounded-full">
                   <Image
-                    src={t.photo}
+                    src={assetUrl(t.photo)}
                     alt={t.name}
                     fill
                     priority
@@ -267,7 +268,7 @@ export default function ConstellationTestimonials() {
             <div className="flex items-center gap-3">
               <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-accent-green">
                 <Image
-                  src={t.photo}
+                  src={assetUrl(t.photo)}
                   alt={t.name}
                   fill
                   sizes="48px"

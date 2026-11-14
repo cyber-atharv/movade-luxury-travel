@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { assetUrl } from "@/lib/asset";
 
 export default function Preloader({
   children,
@@ -57,8 +58,8 @@ export default function Preloader({
               playsInline
               className="h-auto w-[min(60vw,420px)] object-contain mix-blend-screen"
             >
-              <source src="/preloader.webm" type="video/webm" />
-              <source src="/preloader.mp4" type="video/mp4" />
+              <source src={assetUrl("/preloader.webm")} type="video/webm" />
+              <source src={assetUrl("/preloader.mp4")} type="video/mp4" />
             </video>
           </motion.div>
         )}

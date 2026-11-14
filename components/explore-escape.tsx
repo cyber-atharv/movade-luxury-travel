@@ -7,6 +7,7 @@ import { gsap } from "@/lib/gsap-config";
 import Reveal from "@/components/ui/reveal";
 import TiltCard from "@/components/ui/tilt-card";
 import { useToast } from "@/components/ui/toast";
+import { assetUrl } from "@/lib/asset";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ const CARDS = [
     key: "coastal",
     title: "Coastal\nRetreats",
     text: "Relax by the ocean and rejuvenate.",
-    image: "/travel-images/e7f9c5996ffd239cb580afcbaf7b39be.jpg",
+    image: assetUrl("/travel-images/e7f9c5996ffd239cb580afcbaf7b39be.jpg"),
     variant: "framed" as const,
     toast: "Discover stunning coastal retreats near you!",
   },
@@ -29,7 +30,7 @@ const CARDS = [
     key: "water",
     title: "Water\nAdventures",
     text: "Dive into crystal clear waters.",
-    image: "/travel-images/ed65027a80e9751a36aa504460ba7694.jpg",
+    image: assetUrl("/travel-images/ed65027a80e9751a36aa504460ba7694.jpg"),
     variant: "overlay" as const,
     toast: "Ready to dive in? We'll plan your water adventure!",
   },
@@ -37,7 +38,7 @@ const CARDS = [
     key: "cultural",
     title: "Cultural\nJourneys",
     text: "Discover stories, heritage and people.",
-    image: "/travel-images/f94c5898fcc5227a6b969b303bf8a1b6.jpg",
+    image: assetUrl("/travel-images/f94c5898fcc5227a6b969b303bf8a1b6.jpg"),
     variant: "overlay" as const,
     toast: "Explore rich cultures and hidden heritage sites!",
   },
@@ -45,7 +46,7 @@ const CARDS = [
     key: "mountain",
     title: "Mountain\nEscapes",
     text: "Breathe in the wild and find your calm.",
-    image: "/travel-images/fa6dec2785180e3f6486b6bf762d5292.jpg",
+    image: assetUrl("/travel-images/fa6dec2785180e3f6486b6bf762d5292.jpg"),
     variant: "overlay" as const,
     toast: "Find your calm in the mountains — we'll map the trail!",
   },
@@ -196,7 +197,7 @@ export default function ExploreEscape() {
                   </div>
                   <TiltCard className="group relative mt-0 aspect-[4/3] overflow-hidden rounded-2xl md:aspect-auto md:flex-1 md:rounded-3xl">
                     <Image
-                      src={card.image}
+                      src={assetUrl(card.image)}
                       alt={card.title.replace("\n", " ")}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -227,7 +228,7 @@ export default function ExploreEscape() {
                 onClick={() => handleCardClick(card)}
               >
                 <Image
-                  src={card.image}
+                  src={assetUrl(card.image)}
                   alt={card.title.replace("\n", " ")}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"

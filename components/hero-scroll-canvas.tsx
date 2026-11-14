@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { assetUrl } from "@/lib/asset";
 
 const FRAME_COUNT = 197;
 const getFrameSrc = (index: number) =>
-  `/hero-scroll/ezgif-frame-${String(index + 1).padStart(3, "0")}.jpg`;
+  assetUrl(`/hero-scroll/ezgif-frame-${String(index + 1).padStart(3, "0")}.jpg`);
 
 export default function HeroScrollCanvas({
   progressRef,

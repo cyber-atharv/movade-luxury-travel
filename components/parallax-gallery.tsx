@@ -4,6 +4,7 @@ import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap-config";
+import { assetUrl } from "@/lib/asset";
 
 const IMAGES = [
   "/travel-images/22f55cc3f9c4f438dcaff5873166bc37.jpg",
@@ -18,7 +19,7 @@ const IMAGES = [
   "/travel-images/ed65027a80e9751a36aa504460ba7694.jpg",
   "/travel-images/f94c5898fcc5227a6b969b303bf8a1b6.jpg",
   "/travel-images/fa6dec2785180e3f6486b6bf762d5292.jpg",
-];
+].map(assetUrl);
 
 export default function ParallaxGallery() {
   const gallery = useRef<HTMLDivElement>(null);
